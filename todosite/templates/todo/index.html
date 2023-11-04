@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WelcomeNavbar</title>
+		<meta name="viewport" content="width=device-width, initial scal=1.0">
+		{% load static %}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	</head>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'josefin sans', sans-serif;
+		}
+		/*Nav.............. bar*/
+		.hero{
+			height: 100vh;
+			width: 100%;
+			background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images\back.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 40px;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.logo{
+			color: white;
+			font-size: 42px;
+		}
+		.logo span{
+			color: #ea1538;
+		}
+		nav ul li{
+			list-style-type: none;
+			display: inline-block;
+			padding: 10px 20px;
+		}
+		nav ul li a{
+			color: white;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 22px
+		}
+		nav ul li a:hover{
+			color: #ea1538;
+			transition: .3s;
+		}
+		button{
+			border: none;
+			background : #ea1538;
+			padding : 12px 30px;
+			border-radius: 30px;
+			color: white;
+			font-weight: bold;
+			font-size: 20px;
+			transition: .4s;
+		}
+		button:hover{
+			transform: scale(1.3);
+			cursor: pointer;
+		}
+		.content{
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform : translateY(-50%);
+			text-align: center;
+			color: #fff;
+		}
+		.content h1{
+			font-size: 70px;
+			margin-top: 80px;
+		}
+		.content p{
+			font-size: 25px;
+			margin: 20px auto;
+			font-weight: 700 ;
+			line-height: 25px;
+		}
+		
+		
+		.butt {
+		  display: inline-block;
+		  border-radius: 4px;
+		  background-color: #ea1538;
+		  border: none;
+		  color: #FFFFFF;
+		  text-align: center;
+		  font-size: 20px;
+		  padding: 10px;
+		  width: 300px;
+		  transition: all 0.5s;
+		  cursor: pointer;
+		  margin: 5px;
+		}
+		
+		.butt span {
+		  cursor: pointer;
+		  display: inline-block;
+		  position: relative;
+		  transition: 0.5s;
+		}
+		
+		.butt span:after {
+		  content: '\00bb';
+		  position: absolute;
+		  opacity: 0;
+		  top: 0;
+		  right: -20px;
+		  transition: 0.5s;
+		}
+		
+		.butt:hover span {
+		  padding-right: 25px;
+		}
+		
+		.butt:hover span:after {
+		  opacity: 1;
+		  right: 0;
+		}
+		section{
+			padding: 2rem 20%;
+		}
+		.home{
+			display: flex;
+			align-items: right;
+			min-height: 100px;
+			height: 100vh;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+		}
+		/*
+		.home .div2{
+			max-width: 50rem;
+		}
+		.home .div2{
+			font-size: 1.5rem;
+		}.home .div2 p{
+			font-size: 2rem;
+			padding: 1rem -50%;
+		}*/
+		.cons{
+			height: 100vh;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+			background-color: #ea1538
+		}
+		.container{
+			height: 100vh;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+			background-color: #ea1538
+		}
+		.container{
+			display: flex;
+			height: 650px;
+			width: 1000px;
+			border: 1px solid black;
+			margin: auto;
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+		.form{
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			align-items: center;
+			background-color: whitesmoke;
+		}
+		.form h2{
+			font-size: 3rem;
+			font-family: impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			margin: 40px;
+		}
+		.box{
+			padding : 12px;
+			width: 65%;
+			margin :15px;
+			border: 1px solid black;
+			outline:none;
+			border-radius: 20px;
+		}
+		#submit{
+			padding : 12px 30px;
+			width: 40%;
+			margin-top: 40px;
+			background-color: black;
+			color : white;
+			font-weight: bold;
+			border :none;
+			outline: none;
+			border-radius: 20px;
+		}
+		#submit:hover{
+			cursor: pointer;
+			background-color: #750000;
+		}
+		.form a{
+			text-decoration: none;
+			color: black;
+			margin-top: 20px;file:///F:/miniproject/todosite/templates/todo/back.jpg.jpg
+		}
+		.form a:hover{
+			color: #fd4e4e;
+		}
+		.side{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 70%;
+			background-color: #FFFFFF; 
+		}
+		.side img{
+			width: 600px;
+			height: 650px;
+		
+		}
+		
+	</style>
+	<body>
+		<div class="hero">
+			<nav>
+				<h2 class="logo">Work<span>District</span></h2>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<button type="button"><a href = "/signin">signin</a></button>
+
+			</nav>
+			
+			<div class="content">
+				<h1>HELLO&WELCOME<br>TO<br>WORK DISTRICT </h1>
+				<P>Meeting hall booking Slot!</P>
+				<button class="butt" style="vertical-align:middle"><span>Book Now </span></button>
+			</div>
+
+		</div>
+		<section class="home" id="home">
+			<div class="div2">
+			<h1>Conference Hall Meeting Room in India.</h1>
+			<P>Meeting hall booking Slot! avafva gfgue frf  rffh fvh sdfv fkhv sf<br>rferuf urfyg ruf ufr urev uv vuyrv urv <br> yduge uyegf iuruyv eruyv uiyvge ruvyer uvvueyv uy<br>uv erugf eryfug erufg rufegfuy erfuye uerfye rufygrfuy rfuyfg erufye rfueyf <br>gfuye fguyeg erufygr fuygf erufyg erufyeg rufyergfvuy egf </P>
+			</div>	
+		</section>
+		
+		<div class="container">
+			<form action="" class="form">
+				<h2>SIGN IN</h2>
+				<input type="email" name="email" class="box" placeholder="Enter Email">
+				<input type="password" name="password" class="box" placeholder="Enter password">
+				<button type="submit">Log In</button>
+				<a href="#">Forget Password?</a>
+				<a href="{% url 'signin' %}" >Create a account</a>
+			</form>
+			<div class="side">
+				<img src="F:\miniproject\todosite\templates\todo\back.jpg" class = 'img-fluid' alt="">
+			</div>
+		</div>
+		<div class="cons">
+			<h1>HELLO&WELCOME<br>TO<br>WORK DISTRICT </h1>
+			<P>Meeting hall booking Slot!</P>
+		</div>
+	
+	
+	</body>
+</html>
+
+
